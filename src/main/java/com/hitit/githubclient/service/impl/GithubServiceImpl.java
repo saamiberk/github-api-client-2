@@ -16,8 +16,6 @@ import java.util.List;
 @Service
 public class GithubServiceImpl implements GithubService {
 
-
-
     @Autowired
     private RetroGithubAPI retroGithubAPI;
 
@@ -30,7 +28,7 @@ public class GithubServiceImpl implements GithubService {
         Response<List<ContributorsRest>> response = call.execute();
 
         if (!response.isSuccessful()) throw new ServiceException(ErrorMessages.NO_RECORD_FOUND.getErrorMessages());
-        if (response.body() != null) returnValue = response.body().get(0); // get most contributor
+        if (response.body() != null) returnValue = response.body().get(response.body().size()-1); // get most contributor
         return returnValue;
     }
 }

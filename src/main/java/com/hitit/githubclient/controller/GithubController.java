@@ -19,9 +19,8 @@ public class GithubController {
        @GetMapping("/")
        public ModelAndView Index() throws IOException {
            ContributorsRest contributorsRest = githubService.getTopContributor("facebook", "react");
-           ModelAndView mv = new ModelAndView();
+           ModelAndView mv = new ModelAndView("index");
            mv.addObject("contributor", contributorsRest);
-           mv.setViewName("index");
            return mv;
        }
 

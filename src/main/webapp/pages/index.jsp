@@ -5,5 +5,5 @@
     <title>Your page title here!</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
-<body>username: ${contributor.login} contribution: ${contributor.contributions}</body>
+<body>name: ${contributor.author.login} contribution: ${contributor.total}</body>
 </html>

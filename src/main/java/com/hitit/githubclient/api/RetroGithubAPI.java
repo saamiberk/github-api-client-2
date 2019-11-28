@@ -8,6 +8,6 @@ import retrofit2.http.Path;
 import java.util.List;
 
 public interface RetroGithubAPI {
-    @GET("repos/{owner}/{repo}/contributors")
+    @GET("repos/{owner}/{repo}/stats/contributors")
     Call<List<ContributorsRest>> getContributors(@Path("owner") String owner, @Path("repo") String repo);
 }
